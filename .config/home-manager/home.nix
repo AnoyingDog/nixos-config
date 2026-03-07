@@ -40,7 +40,6 @@
         nerd-fonts.caskaydia-cove
         ffmpeg
         ripgrep
-    inputs.zen-browser.packages.${pkgs.system}.default
     ];
     sessionVariables = {
       EDITOR = "nvim";
