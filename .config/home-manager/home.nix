@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
     ./GUIPrograms/vesktop.nix
-      ./GUIPrograms/wofi.nix
 
       ./hypr/hyprland.nix
       ./hypr/hyprpaper.nix
@@ -10,14 +9,16 @@
       ./hypr/hyprshot.nix
 
       ./dunst.nix
+      ./gtk.nix
       ./zsh.nix
+      ./wofi.nix
+      ./rofi.nix
       ./kitty.nix
       ./waybar.nix
       ./neofetch.nix
       ./wlogout.nix
       ./fish.nix
       ./starship.nix
-      ./cursor.nix
       ./yazi.nix
   ];
 
@@ -35,10 +36,11 @@
     stateVersion = "26.05"; 
     packages = with pkgs; [
       neovim
-      thunar
-      nerd-fonts.caskaydia-cove
-      ffmpeg
-      ripgrep
+        thunar
+        nerd-fonts.caskaydia-cove
+        ffmpeg
+        ripgrep
+    inputs.zen-browser.packages.${pkgs.system}.default
     ];
     sessionVariables = {
       EDITOR = "nvim";
@@ -58,9 +60,12 @@
 
     git = {
       enable = true;
-      settings.user = {
-        Name = "AnoyingDog";
-        Email = "188097811+AnoyingDog@users.noreply.github.com";
+      settings = {
+        user = {
+          Name = "AnoyingDog";
+          Email = "188097811+AnoyingDog@users.noreply.github.com";
+        };
+        init.defaultBranch = "main";
       };
     };
 
@@ -96,4 +101,4 @@
 #
 #  /etc/profiles/per-user/leon/etc/profile.d/hm-session-vars.sh
 #
-}
+                       }
