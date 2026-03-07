@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs,... }: {
   imports = [
     ./GUIPrograms/vesktop.nix
 
@@ -20,6 +20,7 @@
       ./fish.nix
       ./starship.nix
       ./yazi.nix
+
   ];
 
 

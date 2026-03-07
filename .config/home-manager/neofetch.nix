@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-old,... }:
 
 {
-  home.packages = with pkgs; [
-    neofetch
+  home.packages = [
+    pkgs-old.neofetch
   ];
   xdg.configFile."neofetch".source = ./configFiles/neofetch;
 }
