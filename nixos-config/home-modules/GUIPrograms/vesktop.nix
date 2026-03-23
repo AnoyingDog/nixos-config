@@ -12,4 +12,8 @@
   };
 
   programs.vesktop.enable = true;
+
+  programs.vesktop.vencord.themes = {
+    "theme.css" = ../configFiles/vesktop/theme.css;
+  };
 }

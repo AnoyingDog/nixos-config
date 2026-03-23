@@ -1,6 +1,7 @@
 { config, pkgs,... }: {
   imports = [
     ./GUIPrograms/vesktop.nix
+    ./GUIPrograms/guitarix.nix
 
       ./hypr/hyprland.nix
       ./hypr/hyprpaper.nix
@@ -20,7 +21,7 @@
       ./fish.nix
       ./starship.nix
       ./yazi.nix
-
+      ./packages.nix
   ];
 
 
@@ -35,13 +36,6 @@
     username = "leon";
     homeDirectory = "/home/leon";
     stateVersion = "26.05"; 
-    packages = with pkgs; [
-      neovim
-        thunar
-        nerd-fonts.caskaydia-cove
-        ffmpeg
-        ripgrep
-    ];
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
@@ -53,7 +47,6 @@
   fonts.fontconfig.enable = true;
 
   programs = {
-
     fastfetch.enable = true;
     gcc.enable = true;
     btop.enable = true;
