@@ -164,7 +164,6 @@
       git
       neovim
       yazi
-      home-manager
       htop
   ];
 

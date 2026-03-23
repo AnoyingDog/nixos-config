@@ -30,7 +30,9 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-      ./configuration.nix
+        ./configuration.nix
+
+          home-manager.nixosModules.home-manager
       ];
     };
 
@@ -45,7 +47,7 @@
       };
 
       modules = [
-        ./home-manager/modules.nix
+        ./home-modules/home.nix
         {
           home.packages = [ inputs.zen-browser.packages.x86_64-linux.default ];
         }];

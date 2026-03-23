@@ -11,7 +11,7 @@
       splash = false; 
       wallpaper = [{
         monitor = "";
-        path = "~/.background";
+        path = "~/nixos-config/images/background";
         fit_mode = "cover";
       }];
     };
