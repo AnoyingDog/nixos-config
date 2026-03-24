@@ -107,7 +107,7 @@
 
       image {
         monitor =
-        path = ~/Pictures/AnoyingDog/AnoyingDog.png
+        path = ~/nixos-config/images/background
         size = 150
         border_color = $accent
         position = 0, 75

@@ -4,6 +4,7 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    settings = builtins.fromTOML (builtins.readFile ./configFiles/starship.toml);
   };
+
+  xdg.configFile."starship.toml".source = ./configFiles/starship.toml;
 }

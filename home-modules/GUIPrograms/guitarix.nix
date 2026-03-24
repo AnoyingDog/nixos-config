@@ -32,33 +32,5 @@
 # Keeps your user presets/banks writable outside the Nix store.
   xdg.configFile."guitarix".source = config.lib.file.mkOutOfStoreSymlink"${config.home.homeDirectory}/.config/guitarix";
 
-  home.sessionVariables = {
-# Let LV2 hosts (Carla, Ardour, …) discover gxplugins automatically.
-    LV2_PATH = lib.concatStringsSep ":" [
-      "${pkgs.gxplugins-lv2}/lib/lv2"
-        "${pkgs.guitarix}/lib/lv2"
-        "$HOME/.lv2"
-    ];
-# Prefer JACK over ALSA/PulseAudio for low-latency I/O.
-    JACK_NO_AUDIO_RESERVATION = "1";
-  };
-
-# ─── Systemd user service (auto-start JACK via PipeWire bridge) ──────────────
-# Only needed when NOT using the PipeWire JACK bridge system-wide.
-# Comment out the whole block if pipewire-jack is handling it for you.
-
-  systemd.user.services.guitarix-jack = {
-    Unit = {
-      Description = "JACK audio server for Guitarix";
-      After       = [ "pipewire.service" "pipewire-pulse.service" ];
-    };
-    Install.WantedBy = [ "default.target" ];
-    Service = {
-      ExecStart = "${pkgs.jack2}/bin/jackd -d alsa -d hw:0 -r 48000 -p 128 -n 2";
-      Restart   = "on-failure";
-# Drop to real-time scheduling if the kernel allows it.
-      Nice      = -10;
-    };
-  };
 }
 
