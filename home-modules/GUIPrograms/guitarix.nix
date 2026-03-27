@@ -30,7 +30,7 @@
       ];
 
 # Keeps your user presets/banks writable outside the Nix store.
-  xdg.configFile."guitarix".source = config.lib.file.mkOutOfStoreSymlink"${config.home.homeDirectory}/.config/guitarix";
+  #xdg.configFile."guitarix".source = config.lib.file.mkOutOfStoreSymlink"${config.home.homeDirectory}/.config/guitarix";
 
 }
 

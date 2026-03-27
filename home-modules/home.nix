@@ -42,6 +42,15 @@
       TERMINAL = "kitty";
       SDL_VIDEODRIVER = "wayland";
     };
+    pointerCursor = {
+      name = "BreezeX-RosePine-Linux";
+      package = pkgs.rose-pine-cursor;
+      size = 24;
+
+      x11.enable = true;
+      x11.defaultCursor = "BreezeX-RosePine-Linux";
+      gtk.enable = true;
+    };
   };
 
   fonts.fontconfig.enable = true;
