@@ -71,6 +71,13 @@
     variant = "nodeadkeys";
     options = "caps:swapescape";
   };
+
+  environment.etc."libinput/local-overides.quirks".text = ''
+    [Never Debounce]
+    MatchUdevType=mouse
+    ModelBouncingKeys=1
+  '';
+
 #Configure keymap in tty
   console.useXkbConfig = true;
 
