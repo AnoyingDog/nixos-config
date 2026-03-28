@@ -12,6 +12,11 @@
       url = "github:Gnarus-G/maccel";
     };
 
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -19,10 +24,12 @@
         home-manager.follows = "home-manager";
       };
     };
+
   };
 
   outputs = inputs@{ nixpkgs, home-manager,... }:
-    let
+
+  let
     system = "x86_64-linux";
   in
   {
@@ -43,7 +50,9 @@
       };
 
       extraSpecialArgs = {
+        inherit inputs;
         pkgs-old = inputs.nixpkgs-old.legacyPackages.x86_64-linux;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.x86_64-linux;
       };
 
       modules = [

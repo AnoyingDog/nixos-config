@@ -12,6 +12,7 @@
       yt-dlp
       gcc
       btop
+      thunderbird
 
       crosspipe
       wireplumber

@@ -2,6 +2,7 @@
   imports = [
     ./GUIPrograms/vesktop.nix
     ./GUIPrograms/guitarix.nix
+    ./GUIPrograms/spicetify.nix
 
       ./hypr/hyprland.nix
       ./hypr/hyprpaper.nix

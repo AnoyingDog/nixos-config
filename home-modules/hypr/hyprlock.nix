@@ -66,8 +66,7 @@
 
       background {
         monitor =
-        #path = ~/Pictures/Backgrounds/hyprlock_background.png
-        path = ~/.background
+        path = ~/nixos-config/images/background
         blur_passes = 0
         color = $base
       }
@@ -107,7 +106,7 @@
 
       image {
         monitor =
-        path = ~/nixos-config/images/background
+        path = ~/nixos-config/images/profile-picture
         size = 150
         border_color = $accent
         position = 0, 75
