@@ -12,6 +12,7 @@
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
 
 # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -75,10 +76,10 @@
     options = "caps:swapescape";
   };
 
-  environment.etc."libinput/local-overides.quirks".text = ''
+  environment.etc."libinput/local-overrides.quirks".text = ''
     [Never Debounce]
     MatchUdevType=mouse
-      ModelBouncingKeys=1
+    ModelBouncingKeys=1
       '';
 
 #Configure keymap in tty

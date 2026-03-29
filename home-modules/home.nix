@@ -80,6 +80,9 @@
       enable = true;
       setAsDefaultBrowser = true;
     };
+    prismlauncher = {
+      enable = true;
+    };
   };
 
   # Let Home Manager install and manage itself.

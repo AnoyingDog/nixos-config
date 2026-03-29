@@ -51,5 +51,6 @@
 
     wl-clipboard
 
+    atlauncher
   ];
 }
