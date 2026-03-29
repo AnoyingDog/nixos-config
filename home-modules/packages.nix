@@ -50,7 +50,5 @@
     xournalpp
 
     wl-clipboard
-
-    atlauncher
   ];
 }
