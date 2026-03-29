@@ -16,25 +16,28 @@
 # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "NixOS"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    hostName = "The-Silly-Machine";
+    wireless.enable = true;
+#interfaces.enp5s0 = {
+#ipv4.addresses = [{
+#address = "192.168.1.81";
+#prefixLength = 24;
+#}];
+#};
+#defaultGateway = "192.168.1.1";
+#nameservers = [ "1.1.1.1" "8.8.8.8" ];
+
+    networkmanager = {
+      enable = true;
+#unmanaged = [ "enp5s0" ];
+    };
+  };
 
 # Configure network proxy if necessary
 # networking.proxy.default = "http://user:password@proxy:port/";
 # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-# Enable networking
-    networking.networkmanager = {
-      enable = true;
-#wifi.backend = "iwd";
-    };
-#networking.wireless.iwd = {
-#enable = true;
-#settings = {
-#Network.EnableIPv6 = true;
-#Settings.AutoConnect = true;
-#};
-#};
 # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
@@ -75,8 +78,8 @@
   environment.etc."libinput/local-overides.quirks".text = ''
     [Never Debounce]
     MatchUdevType=mouse
-    ModelBouncingKeys=1
-  '';
+      ModelBouncingKeys=1
+      '';
 
 #Configure keymap in tty
   console.useXkbConfig = true;
@@ -172,7 +175,8 @@
       neovim
       yazi
       htop
-      
+
+      playerctl
       brightnessctl
       fanctl
       ethtool

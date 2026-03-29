@@ -12,11 +12,6 @@
       url = "github:Gnarus-G/maccel";
     };
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -25,41 +20,50 @@
       };
     };
 
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs@{ nixpkgs, home-manager,... }:
 
-  let
-    system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations."NixOS" = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
+    let
+      system = "x86_64-linux";
+    in
+      {
+      nixosConfigurations."The-Silly-Machine" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
 
           home-manager.nixosModules.home-manager
-      ];
-    };
-
-    homeConfigurations."leon" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+        ];
       };
 
-      extraSpecialArgs = {
-        inherit inputs;
-        pkgs-old = inputs.nixpkgs-old.legacyPackages.x86_64-linux;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.x86_64-linux;
-      };
+      homeConfigurations."leon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
 
-      modules = [
-        ./home-modules/home.nix
-        {
-          home.packages = [ inputs.zen-browser.packages.x86_64-linux.default ];
-        }];
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-old = inputs.nixpkgs-old.legacyPackages.x86_64-linux;
+          spicePkgs = inputs.spicetify-nix.legacyPackages.x86_64-linux;
+        };
+
+        modules = [
+          ./home-modules/home.nix
+          {
+          }];
+      };
     };
-  };
 }

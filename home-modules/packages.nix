@@ -1,31 +1,55 @@
 { config, pkgs,... }:
+
 {
-    home.packages = with pkgs; [
-      neovim
-      thunar
-      nerd-fonts.caskaydia-cove
-      ffmpeg
-      ripgrep
-      bat
-      feh
-      mpv
-      yt-dlp
-      gcc
-      btop
-      thunderbird
+  home.packages = with pkgs; [
+    neovim
+    thunar
+    nerd-fonts.caskaydia-cove
+    ffmpeg
+    ripgrep
+    fzf
+    bat
+    feh
+    mpv
+    yt-dlp
+    gcc
+    btop
+    thunderbird
 
-      crosspipe
-      wireplumber
-      pavucontrol
-      guitarix
+    guitarix               # The amp simulator itself
+    gxplugins-lv2          # Official Guitarix LV2 plug-in collection
+    # JACK tooling
+    jack2                  # JACK Audio Connection Kit daemon & tools
+    jack-example-tools     # jack_connect, jack_lsp, jack_monitor, …
+    qjackctl               # GUI patchbay / JACK control panel
+    # LV2 / plugin ecosystem
+    lv2                    # LV2 specification & headers
+    lilv                   # LV2 host library (used by Guitarix)
+    suil                   # LV2 UI embedding library
+    lsp-plugins            # Huge bundle of quality LV2 effects
+    calf                   # Calf Studio Gear (chorus, reverb, EQ, …)
+    zam-plugins            # ZaMaximX2, ZaMultiComp, ZaReverb, …
+    mda_lv2                # MDA classic plug-ins ported to LV2
+    mod-distortion         # MOD Distortion plug-ins
+    # Utilities
+    ardour                 # Optional DAW that works well with Guitarix
+    carla                  # Plugin host / patchbay (great companion)
+    a2jmidid               # ALSA→JACK MIDI bridge
+    crosspipe
+    wireplumber
+    pavucontrol
 
-      wireplumber
-      obs-studio
+    chromium
+    firefox
 
-      zstd
-      unrar
-      unzip
-      xournalpp
+    obs-studio
 
-    ];
+    zstd
+    unrar
+    unzip
+    xournalpp
+
+    wl-clipboard
+
+  ];
 }
