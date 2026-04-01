@@ -19,7 +19,7 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
       cursor_blink_interval = 0;
-      background_opacity = 0.9;
+      background_opacity = 0.8;
     };
     shellIntegration.enableZshIntegration = true;
     themeFile = "Catppuccin-Mocha";

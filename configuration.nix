@@ -19,7 +19,6 @@
 
   networking = {
     hostName = "The-Silly-Machine";
-    wireless.enable = true;
 #interfaces.enp5s0 = {
 #ipv4.addresses = [{
 #address = "192.168.1.81";
@@ -59,14 +58,11 @@
 
 # Enable the X11 windowing system.
 # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  services.xserver.enable = false;
 
 # Enable the Desktop Environment and Display Manager.
   services.displayManager.ly.enable = true; 
-
-# services.displayManager.sddm.enable = true; # for when the ly devs screw up AGAIN. 
   services.desktopManager.plasma6.enable = true;
-
   programs.hyprland.enable = true; 
 
 # Configure keymap in X11
@@ -146,13 +142,43 @@
     fish.enable = true;
     steam = {
       enable = true;
+      remotePlay.openFirewall = true;
+    };
+
+    corectrl.enable = true;
+    nix-ld.enable = true;
+
+    gamemode = {
+      enable = true;
+      settings = {
+        general = {
+          renice = 5; #adjusts niceness value (-20 to 19)
+          inhibit_screensaver = 1; #blocks screensaver/lock screen
+        };
+        gpu = {
+          apply_gpu_optimisations = "accept-responsibility";
+          gpu_device = 0;
+          amd_performance_level = "high";
+        };
+        cpu = {
+          park_cores = "no";
+          pin_cores = "yes";
+        };
+      };
     };
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  zramSwap.enable = true;
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    cpu.intel.updateMicrocode = true;
   };
+
+  powerManagement.cpuFreqGovernor = "performance";
 
   hardware.maccel = {
     enable = true;
@@ -167,6 +193,18 @@
       offset = 3.0;
       limit = 1.3;
     };
+  };
+
+  environment.sessionVariables = {
+# Force RADV (Mesa Vulkan) — faster than amdvlk for most games
+    AMD_VULKAN_ICD = "RADV";
+
+# Proton improvements
+    VKD3D_FEATURE_LEVEL = "12_1";
+
+# Mesa shader cache — point to a stable location
+    MESA_SHADER_CACHE_DIR = "$HOME/.cache/mesa_shaders";
+    DXVK_STATE_CACHE_PATH = "$HOME/.cache/dxvk";
   };
 # List packages installed in system profile. To search, run:
 # $ nix search wget
@@ -194,7 +232,7 @@
 # List services that you want to enable:
 
 # Enable the OpenSSH daemon.
-# services.openssh.enable = true;
+services.openssh.enable = true;
 
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];

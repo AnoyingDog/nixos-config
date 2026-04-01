@@ -10,10 +10,9 @@
     fzf
     bat
     feh
+    cavalier
     mpv
     yt-dlp
-    gcc
-    btop
     thunderbird
 
     guitarix               # The amp simulator itself
