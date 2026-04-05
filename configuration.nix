@@ -12,27 +12,28 @@
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
 
 # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
     hostName = "The-Silly-Machine";
-#interfaces.enp5s0 = {
-#ipv4.addresses = [{
-#address = "192.168.1.81";
-#prefixLength = 24;
-#}];
-#};
-#defaultGateway = "192.168.1.1";
-#nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    #interfaces.enp5s0 = {
+      #ipv4.addresses = [{
+        #address = "192.168.1.81";
+        #prefixLength = 24;
+      #}];
+    #};
+    #defaultGateway = "192.168.1.1";
+    #nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
     networkmanager = {
       enable = true;
-#unmanaged = [ "enp5s0" ];
+      #unmanaged = [ "enp5s0" ];
     };
   };
+
 
 # Configure network proxy if necessary
 # networking.proxy.default = "http://user:password@proxy:port/";
@@ -56,6 +57,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  systemd = {
+    services.NetworkManager-wait-online.enable = false;
+  };
+
 # Enable the X11 windowing system.
 # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
@@ -72,6 +77,10 @@
     options = "caps:swapescape";
   };
 
+  services = {
+    fwupd.enable = false;
+  };
+
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Never Debounce]
     MatchUdevType=mouse
@@ -82,15 +91,7 @@
   console.useXkbConfig = true;
 
 #Configure Fonts
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      nerd-fonts.caskaydia-cove
-    ];
-    fontconfig = {
-      enable = true;
-    };
-  };
+  fonts.fontconfig.enable = true;
 
 # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -168,7 +169,7 @@
     };
   };
 
-  zramSwap.enable = true;
+  #zramSwap.enable = true;
 
   hardware = {
     graphics = {
@@ -178,7 +179,7 @@
     cpu.intel.updateMicrocode = true;
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
+  #powerManagement.cpuFreqGovernor = "performance";
 
   hardware.maccel = {
     enable = true;

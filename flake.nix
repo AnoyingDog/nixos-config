@@ -20,13 +20,18 @@
       };
     };
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+    nvf = {
+      url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -62,6 +67,7 @@
 
         modules = [
           ./home-modules/home.nix
+          inputs.catppuccin.homeModules.catppuccin
           {
           }];
       };

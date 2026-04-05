@@ -14,7 +14,10 @@
 
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
     };
 
     cursorTheme = {
@@ -23,6 +26,6 @@
     };
   };
 
-  # Required for GTK4 apps
+# Required for GTK4 apps
   home.sessionVariables.GTK_THEME = "catppuccin-mocha-mauve-standard";
 }

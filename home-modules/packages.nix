@@ -41,12 +41,14 @@
     chromium
     firefox
 
-    obs-studio
-
     zstd
     unrar
     unzip
     xournalpp
+
+    obs-studio
+    kdePackages.kdenlive
+    gimp
 
     wl-clipboard
   ];
