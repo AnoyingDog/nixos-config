@@ -105,7 +105,7 @@
 
 #easier replace
       {
-        key = "<leaders";
+        key = "<leader>s";
         mode = "n";
         silent = false;
         action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/<Left>";
