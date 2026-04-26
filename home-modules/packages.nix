@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     neovim
+    opencode
     thunar
     nerd-fonts.caskaydia-cove
     ffmpeg
@@ -11,9 +12,20 @@
     bat
     feh
     cavalier
+    mangohud
     mpv
     yt-dlp
     thunderbird
+    zapzap
+
+    r2modman
+    lutris
+    wine
+    osu-lazer-bin
+    appimage-run
+    appimageupdate
+
+    hyprpicker
 
     guitarix               # The amp simulator itself
     gxplugins-lv2          # Official Guitarix LV2 plug-in collection
@@ -40,7 +52,8 @@
 
     chromium
     firefox
-
+    
+    _7zip-zstd
     zstd
     unrar
     unzip

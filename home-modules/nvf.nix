@@ -80,7 +80,9 @@
       
       lsp = {
         enable = true;
-        harper-ls.enable = true; #spellchecking
+        presets = {
+          harper.enable = true; #spellchecking
+        };
         mappings = {
           codeAction = "<leader>ca";
           hover = "K";

@@ -14,7 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
 
-# Use latest kernel.
+  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
@@ -67,7 +67,10 @@
 
 # Enable the Desktop Environment and Display Manager.
   services.displayManager.ly.enable = true; 
+
   services.desktopManager.plasma6.enable = true;
+  services.power-profiles-daemon.enable = false;
+
   programs.hyprland.enable = true; 
 
 # Configure keymap in X11
@@ -94,7 +97,15 @@
   fonts.fontconfig.enable = true;
 
 # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ gutenprint hplip ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
 # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -120,7 +131,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "leon";
-    extraGroups = [ "networkmanager" "wheel" "audio" "jackaudio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "jackaudio" "lp" "lpadmin" "video" "render" "gamemode"];
   };
 
 
@@ -153,23 +164,30 @@
       enable = true;
       settings = {
         general = {
-          renice = 5; #adjusts niceness value (-20 to 19)
-          inhibit_screensaver = 1; #blocks screensaver/lock screen
+          ioprio = 0;
+          renice = 0;
+          desiredgov = "performance";
         };
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";
-          gpu_device = 0;
           amd_performance_level = "high";
         };
         cpu = {
           park_cores = "no";
-          pin_cores = "yes";
+          pin_cores = "no";
         };
       };
     };
+    fuse.userAllowOther = true;
+    appimage = {
+      enable = true;
+      binfmt = true; # registers binfmt so AppImages run directly without appimage-run
+    };
   };
 
-  #zramSwap.enable = true;
+  boot.kernelParams = [ "intel_pstate=passive" ];
+  boot.kernelModules = [ "msr" "fuse" ];
+
 
   hardware = {
     graphics = {
@@ -179,7 +197,6 @@
     cpu.intel.updateMicrocode = true;
   };
 
-  #powerManagement.cpuFreqGovernor = "performance";
 
   hardware.maccel = {
     enable = true;
@@ -220,6 +237,10 @@
       brightnessctl
       fanctl
       ethtool
+      linuxPackages.cpupower
+
+      fuse
+      fuse3
   ];
 
 # Some programs need SUID wrappers, can be configured further or are

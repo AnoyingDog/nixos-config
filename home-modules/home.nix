@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.zen-browser.homeModules.twilight-official
+    inputs.zen-browser.homeModules.twilight
 
       ./GUIPrograms/vesktop.nix
       ./GUIPrograms/spicetify.nix
@@ -101,6 +101,7 @@
     accent = "mauve";
 
     btop.enable = true;
+    fish.enable = true;
   };
 
 # Let Home Manager install and manage itself.
