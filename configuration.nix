@@ -59,6 +59,11 @@
 
   systemd = {
     services.NetworkManager-wait-online.enable = false;
+
+    settings.Manager = {
+      DefaultTimeoutStartSec = "15s";
+      DefaultTimeoutStopSec = "15s";
+    };
   };
 
 # Enable the X11 windowing system.

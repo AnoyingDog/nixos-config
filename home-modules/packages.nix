@@ -19,7 +19,6 @@
     zapzap
 
     r2modman
-    lutris
     wine
     osu-lazer-bin
     appimage-run
@@ -42,6 +41,7 @@
     zam-plugins            # ZaMaximX2, ZaMultiComp, ZaReverb, …
     mda_lv2                # MDA classic plug-ins ported to LV2
     mod-distortion         # MOD Distortion plug-ins
+
     # Utilities
     ardour                 # Optional DAW that works well with Guitarix
     carla                  # Plugin host / patchbay (great companion)
