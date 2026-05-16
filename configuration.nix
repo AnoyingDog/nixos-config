@@ -7,6 +7,7 @@
 {
   imports = [ 
     ./hardware-configuration.nix
+    ./nixos-modules/minecraft-server.nix
     inputs.maccel.nixosModules.default
   ];
 # Bootloader.
@@ -131,20 +132,11 @@
 # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.leon = {
-    shell = pkgs.fish;
-    isNormalUser = true;
-    description = "leon";
-    extraGroups = [ "networkmanager" "wheel" "audio" "jackaudio" "lp" "lpadmin" "video" "render" "gamemode"];
-  };
-
-
   nix = {
     gc = {
       automatic = true;
       dates = "daily";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 5d";
     };
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
@@ -154,6 +146,14 @@
 
 # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+# Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.leon = {
+    shell = pkgs.fish;
+    isNormalUser = true;
+    description = "leon";
+    extraGroups = [ "networkmanager" "wheel" "audio" "jackaudio" "lp" "lpadmin" "video" "render" "libvirtd"];
+  };
 
   programs = {
     fish.enable = true;
@@ -183,11 +183,33 @@
         };
       };
     };
+
     fuse.userAllowOther = true;
     appimage = {
       enable = true;
       binfmt = true; # registers binfmt so AppImages run directly without appimage-run
     };
+
+    virt-manager.enable = true;
+  };
+
+  services = {
+    keyd = {
+      enable = true;
+      keyboards.default = {
+        ids = [ "*" ];
+        settings.main = {
+          capslock = "esc";
+          esc = "capslock";
+        };
+      };
+    };
+
+    qemuGuest.enable = true;
+  };
+
+  virtualisation.libvirtd = {
+    enable = true;
   };
 
   boot.kernelParams = [ "intel_pstate=passive" ];

@@ -81,7 +81,7 @@
       lsp = {
         enable = true;
         presets = {
-          harper.enable = true; #spellchecking
+          #harper.enable = true; #spellchecking
         };
         mappings = {
           codeAction = "<leader>ca";
