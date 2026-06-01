@@ -59,16 +59,19 @@
         indent.enable = false;
       };
 
-      utility.oil-nvim = {
-        enable = true;
-        gitStatus.enable = true;
-        setupOpts = {
-          columns = [
-            "icon"
-              "size"
-              "mtime"
-          ];
+      utility = {
+        oil-nvim = {
+          enable = true;
+          gitStatus.enable = true;
+          setupOpts = {
+            columns = [
+              "icon"
+                "size"
+                "mtime"
+            ];
+          };
         };
+        smart-splits.enable = true;
       };
 
       autocomplete.nvim-cmp.enable = true;
@@ -77,11 +80,14 @@
         luasnip.enable = true;
       };
 
-      
+
       lsp = {
         enable = true;
+        trouble = {
+          enable = true;
+        };
         presets = {
-          #harper.enable = true; #spellchecking
+#harper.enable = true; #spellchecking
         };
         mappings = {
           codeAction = "<leader>ca";
@@ -100,7 +106,19 @@
           lsp.servers = [ "nixd" ];
           treesitter.enable = true;
         };
+        
+        clang = {
+          enable = true;
+          dap.enable = true;
+        };
+
         markdown.enable = true;
+      };
+
+      diagnostics = {
+        enable = true;
+        config.virtual_text = false;
+        config.virtual_lines = true;
       };
 
       keymaps = [

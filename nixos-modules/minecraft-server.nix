@@ -28,7 +28,7 @@
           server-port = 25565;
           difficulty = "normal";
           gamemode = "survival";
-          max-players = 2;
+          max-players = 10;
           motd = "\\u00A75Super duper silly awesome sauce server :3";
           white-list = false;
           view-distance = 32;
