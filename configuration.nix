@@ -61,9 +61,6 @@
   systemd = {
     services.NetworkManager-wait-online.enable = false;
 
-    packages = [ pkgs.waydroid-helper ];
-    services.waydroid-mount.wantedBy = [ "multi-user.target" ];
-
     settings.Manager = {
       DefaultTimeoutStartSec = "15s";
       DefaultTimeoutStopSec = "15s";
@@ -89,6 +86,10 @@
     options = "caps:swapescape";
   };
 
+  services = {
+    fwupd.enable = false;
+  };
+
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Never Debounce]
     MatchUdevType=mouse
@@ -100,6 +101,17 @@
 
 #Configure Fonts
   fonts.fontconfig.enable = true;
+
+# Enable CUPS to print documents.
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ gutenprint hplip ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
 # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -172,11 +184,6 @@
       };
     };
 
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
     fuse.userAllowOther = true;
     appimage = {
       enable = true;
@@ -198,31 +205,11 @@
       };
     };
 
-    flatpak.enable = true;
-
-    fwupd.enable = false;
-
     qemuGuest.enable = true;
-
-# Enable CUPS to print documents.
-    printing = {
-      enable = true;
-      drivers = with pkgs; [ gutenprint hplip ];
-    };
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
   };
 
-  virtualisation = {
-    waydroid.enable = true;
-    waydroid.package = pkgs.waydroid-nftables;
-
-    libvirtd = {
-      enable = true;
-    };
+  virtualisation.libvirtd = {
+    enable = true;
   };
 
   boot.kernelParams = [ "intel_pstate=passive" ];
@@ -267,15 +254,17 @@
 # List packages installed in system profile. To search, run:
 # $ nix search wget
   environment.systemPackages = with pkgs; [
-      home-manager
+    firefox
+      git
+      neovim
+      yazi
+      htop
+
       playerctl
       brightnessctl
       fanctl
       ethtool
       linuxPackages.cpupower
-      wl-clipboard
-      waydroid-helper
-      cage
 
       fuse
       fuse3

@@ -9,7 +9,7 @@
     enable = true;
 
     enabledExtensions = with spicePkgs.extensions; [
-      adblock
+      adblockify
     ];
 
     theme = spicePkgs.themes.catppuccin;
