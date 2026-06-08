@@ -41,6 +41,7 @@
     zam-plugins            # ZaMaximX2, ZaMultiComp, ZaReverb, …
     mda_lv2                # MDA classic plug-ins ported to LV2
     mod-distortion         # MOD Distortion plug-ins
+    tonelib-gfx
 
     # Utilities
     ardour                 # Optional DAW that works well with Guitarix
