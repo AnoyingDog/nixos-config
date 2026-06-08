@@ -52,27 +52,47 @@
         modules = [
           ./configuration.nix
 
-          home-manager.nixosModules.home-manager
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+            pkgs-old = inputs.nixpkgs-old.legacyPackages.${system};
+            spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+          };
+
+          home-manager.sharedModules = [
+            inputs.catppuccin.homeModules.catppuccin
+          ];
+
+          home-manager.users.leon =
+            import ./home-modules/home.nix;
+        }
+
+
         ];
       };
 
-      homeConfigurations."leon" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-
-        extraSpecialArgs = {
-          inherit inputs;
-          pkgs-old = inputs.nixpkgs-old.legacyPackages.x86_64-linux;
-          spicePkgs = inputs.spicetify-nix.legacyPackages.x86_64-linux;
-        };
-
-        modules = [
-          ./home-modules/home.nix
-          inputs.catppuccin.homeModules.catppuccin
-          {
-          }];
-      };
+      #homeConfigurations."leon" = home-manager.lib.homeManagerConfiguration {
+        #pkgs = import nixpkgs {
+          #inherit system;
+          #config.allowUnfree = true;
+        #};
+#
+        #extraSpecialArgs = {
+          #inherit inputs;
+          #pkgs-old = inputs.nixpkgs-old.legacyPackages.x86_64-linux;
+          #spicePkgs = inputs.spicetify-nix.legacyPackages.x86_64-linux;
+        #};
+#
+        #modules = [
+          #./home-modules/home.nix
+          #inputs.catppuccin.homeModules.catppuccin
+          #{
+          #}];
+      #};
     };
 }
