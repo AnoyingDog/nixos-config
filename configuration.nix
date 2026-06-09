@@ -77,7 +77,11 @@
   services.desktopManager.plasma6.enable = true;
   services.power-profiles-daemon.enable = false;
 
-  programs.hyprland.enable = true; 
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; 
+    xwayland.enable = true; 
+  };
 
 # Configure keymap in X11
   services.xserver.xkb = {
@@ -208,8 +212,11 @@
     qemuGuest.enable = true;
   };
 
-  virtualisation.libvirtd = {
-    enable = true;
+  virtualisation = {
+    waydroid.enable = true;
+    waydroid.package = pkgs.waydroid-nftables;
+
+    libvirtd.enable = true;
   };
 
   boot.kernelParams = [ "intel_pstate=passive" ];
@@ -241,6 +248,8 @@
   };
 
   environment.sessionVariables = {
+
+  JACK_DEFAULT_SERVER = "pipewire";
 # Force RADV (Mesa Vulkan) — faster than amdvlk for most games
     AMD_VULKAN_ICD = "RADV";
 
@@ -268,6 +277,13 @@
 
       fuse
       fuse3
+      waydroid-helper
+
+      jack2
+      pipewire
+      wireplumber
+      alsa-utils
+      pipewire.jack
   ];
 
 # Some programs need SUID wrappers, can be configured further or are

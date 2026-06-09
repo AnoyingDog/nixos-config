@@ -17,6 +17,5 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
-    theme = fromTOML (builtins.readFile ./configFiles/yazi/theme.toml);
   };
 }

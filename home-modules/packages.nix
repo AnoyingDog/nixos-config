@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     neovim
     opencode
-    thunar
     nerd-fonts.caskaydia-cove
     ffmpeg
     ripgrep

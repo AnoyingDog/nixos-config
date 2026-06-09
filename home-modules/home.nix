@@ -6,6 +6,7 @@
 
       ./GUIPrograms/vesktop.nix
       ./GUIPrograms/spicetify.nix
+      ./GUIPrograms/guitarix.nix
 
       ./hypr/hyprland.nix
       ./hypr/hyprpaper.nix
@@ -27,10 +28,6 @@
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.home-manager = {
-    enable = true;
-  };
 
   home = {
     username = "leon";
@@ -56,6 +53,7 @@
   fonts.fontconfig.enable = true;
 
   programs = {
+
     fastfetch.enable = true;
     gcc.enable = true;
 
@@ -101,6 +99,7 @@
 
     btop.enable = true;
     fish.enable = true;
+    yazi.enable = true;
   };
 
 # Let Home Manager install and manage itself.
