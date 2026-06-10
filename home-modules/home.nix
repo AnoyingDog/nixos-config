@@ -80,6 +80,8 @@
       };
     };
 
+    rbw.enable = true;
+    
     zen-browser = {
       enable = true;
       setAsDefaultBrowser = true;
