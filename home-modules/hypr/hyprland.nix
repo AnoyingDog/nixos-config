@@ -5,6 +5,7 @@
     hyprpolkitagent.enable = true;
   };
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.configType = "hyprlang";
   wayland.windowManager.hyprland.settings = {
 
     monitor = [

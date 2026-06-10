@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   xdg.desktopEntries.guitarix = {
     name = "Guitarix";

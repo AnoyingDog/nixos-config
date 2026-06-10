@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   xdg.desktopEntries.vesktop = {
     name = "Vesktop (Wayland)";

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,...}:
+{ inputs,...}:
 
 {
 
@@ -65,8 +65,8 @@
         setupOpts = {
           columns = [
             "icon"
-              "size"
-              "mtime"
+            "size"
+            "mtime"
           ];
         };
       };
@@ -86,6 +86,13 @@
         mappings = {
           codeAction = "<leader>ca";
           hover = "K";
+        };
+      };
+
+      diagnostics = {
+        enable = true;
+        config = {
+          virtual_lines.enable = true;
         };
       };
 

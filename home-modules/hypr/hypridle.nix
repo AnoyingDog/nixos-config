@@ -1,16 +1,14 @@
-{ config, pkgs, ... }:
-
 {
   services.hypridle = {
     enable = true;
     settings = {
       listener = [
         {
-          timeout = 450;
+          timeout = 600;
           on-timeout = "hyprlock";
         }
         {
-          timeout = 900;
+          timeout = 60;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }

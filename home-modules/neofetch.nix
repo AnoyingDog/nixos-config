@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-old,... }:
+{ pkgs-old,... }:
 
 {
   home.packages = [
