@@ -16,6 +16,7 @@
     yt-dlp
     thunderbird
     zapzap
+    pinentry-curses
 
     r2modman
     wine

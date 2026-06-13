@@ -80,7 +80,9 @@
       };
     };
 
-    rbw.enable = true;
+    rbw = {
+      enable = true;
+    };
     
     zen-browser = {
       enable = true;
