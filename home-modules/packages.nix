@@ -17,6 +17,7 @@
     thunderbird
     zapzap
     pinentry-curses
+    xdg-desktop-portal-hyprland
 
     r2modman
     wine

@@ -18,7 +18,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking = {
+ networking = {
     hostName = "The-Silly-Machine";
     #interfaces.enp5s0 = {
       #ipv4.addresses = [{
@@ -88,10 +88,6 @@
     layout = "at";
     variant = "nodeadkeys";
     options = "caps:swapescape";
-  };
-
-  services = {
-    fwupd.enable = false;
   };
 
   environment.etc."libinput/local-overrides.quirks".text = ''
@@ -210,6 +206,9 @@
     };
 
     qemuGuest.enable = true;
+
+    upower.enable = true;
+    tuned.enable = true;
   };
 
   virtualisation = {
@@ -229,6 +228,7 @@
       enable32Bit = true;
     };
     cpu.intel.updateMicrocode = true;
+    bluetooth.enable = false;
   };
 
 

@@ -15,6 +15,7 @@
       ./hypr/hyprshot.nix
 
       ./nvf.nix
+      ./desktop-entries.nix
       ./gtk.nix
       ./rofi.nix
       ./kitty.nix
@@ -106,6 +107,7 @@
     btop.enable = true;
     fish.enable = true;
     yazi.enable = true;
+    qt5ct.enable = true;
   };
 
 # Let Home Manager install and manage itself.

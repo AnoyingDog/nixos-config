@@ -8,6 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+
+    import-tree = {
+      url = "github:vic/import-tree";
+    };
+
     maccel = {
       url = "github:Gnarus-G/maccel";
     };
