@@ -1,18 +1,18 @@
 {
   networking = {
     hostName = "The-Silly-Machine";
-    interfaces.enp5s0 = {
-      ipv4.addresses = [{
-        address = "192.168.1.81";
-        prefixLength = 24;
-      }];
-    };
-    defaultGateway = "192.168.1.1";
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    #interfaces.enp5s0 = {
+      #ipv4.addresses = [{
+        #address = "192.168.1.81";
+        #prefixLength = 24;
+      #}];
+    #};
+    #defaultGateway = "192.168.1.1";
+    #nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
     networkmanager = {
       enable = true;
-      unmanaged = [ "enp5s0" ];
+      #unmanaged = [ "enp5s0" ];
     };
   };
 }

@@ -13,7 +13,7 @@
       };
     };
 
-    services.printing = {
+    printing = {
       enable = true;
       drivers = with pkgs; [ gutenprint hplip ];
     };

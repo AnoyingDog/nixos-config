@@ -72,7 +72,7 @@
               inputs.catppuccin.homeModules.catppuccin
             ];
 
-            home-manager.users.leon = import ./home-modules/home.nix;
+            home-manager.users.leon = import ./home.nix;
           }
       ];
     };
