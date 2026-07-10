@@ -18,10 +18,13 @@
     zapzap
     pinentry-curses
     xdg-desktop-portal-hyprland
+    cava
 
     r2modman
     wine
     osu-lazer-bin
+    (olympus.override { celesteWrapper = "steam-run"; })
+    gamescope
     appimage-run
     appimageupdate
 
@@ -61,7 +64,6 @@
     unzip
     xournalpp
 
-    obs-studio
     kdePackages.kdenlive
     gimp
 

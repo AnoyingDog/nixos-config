@@ -41,6 +41,7 @@
       SDL_VIDEODRIVER = "wayland";
     };
     pointerCursor = {
+      enable = true;
       name = "BreezeX-RosePine-Linux";
       package = pkgs.rose-pine-cursor;
       size = 24;

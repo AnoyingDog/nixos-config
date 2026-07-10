@@ -1,0 +1,32 @@
+{ self, inputs, ... }: {
+  flake.nixosModules.The-Silly-Machine-Hardware = { config, lib, modulesPath, ... }:{
+
+    imports =
+      [ (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+
+    boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+    boot.initrd.kernelModules = [ ];
+    boot.kernelModules = [ "kvm-intel" ];
+    boot.extraModulePackages = [ ];
+
+    fileSystems."/" =
+    { device = "/dev/disk/by-uuid/42614423-da61-4762-8b64-1812add371c6";
+      fsType = "ext4";
+    };
+
+    fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/2B4C-8BC3";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+    swapDevices =
+      [ { device = "/dev/disk/by-uuid/74e3e504-6d80-49a1-83d3-641723b5b9ab"; }
+      ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  };
+
+}
