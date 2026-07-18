@@ -5,6 +5,8 @@
 # Force RADV (Mesa Vulkan) — faster than amdvlk for most games
     AMD_VULKAN_ICD = "RADV";
 
+    SDL_VIDEODRIVER = "wayland";
+
 # Proton improvements
     VKD3D_FEATURE_LEVEL = "12_1";
 

@@ -10,7 +10,6 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     maccel = {
       url = "github:Gnarus-G/maccel";
@@ -37,6 +36,10 @@
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
     };
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
