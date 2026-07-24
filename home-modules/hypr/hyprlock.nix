@@ -1,3 +1,5 @@
+{ assets, ... }: 
+
 {
   programs.hyprlock = {
     enable = true;
@@ -64,7 +66,7 @@
 
       background {
         monitor =
-        path = ~/nixos-config/images/background
+        path = ${toString assets.wallpaper}
         blur_passes = 0
         color = $base
       }
@@ -104,7 +106,7 @@
 
       image {
         monitor =
-        path = ~/nixos-config/images/profile-picture
+        path = ${toString assets.profile-picture}
         size = 150
         border_color = $accent
         position = 0, 75

@@ -70,7 +70,7 @@
   };
 
   services = {
-    dunst.enable = true;
+    dunst.enable = false;
   };
 
   catppuccin = {

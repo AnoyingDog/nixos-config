@@ -24,7 +24,7 @@
       hl.exec_cmd("steam -silent")
 
       hl.exec_cmd("hyprpaper")
-      hl.exec_cmd("waybar")
+      hl.exec_cmd("noctalia")
       hl.exec_cmd("dunst")
       hl.exec_cmd("hypridle")
 

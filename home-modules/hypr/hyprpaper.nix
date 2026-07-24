@@ -1,11 +1,13 @@
+{ assets, ... }: 
+
 {
   services.hyprpaper = {
-    enable = true;
+    enable = false;
     settings = {
       splash = false; 
       wallpaper = [{
         monitor = "";
-        path = "~/nixos-config/images/background";
+        path = toString assets.wallpaper;
         fit_mode = "cover";
       }];
     };

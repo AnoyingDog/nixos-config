@@ -39,7 +39,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia";
+      url = "github:noctalia-dev/noctalia/cachix";
     };
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
@@ -55,7 +55,11 @@
   {
     nixosConfigurations."The-Silly-Machine" = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+
+      specialArgs = {
+        inherit inputs;
+      };
+
       modules = [
         ./configuration.nix
 
@@ -69,6 +73,13 @@
               inherit inputs;
               pkgs-old = inputs.nixpkgs-old.legacyPackages.${system};
               spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+
+              assets = {
+                wallpaper = ./assets/wallpapers/default-wallpaper.png;
+                wallpaper-dir = ./assets/wallpapers;
+                profile-picture = ./assets/profile-picture.png;
+              };
+
             };
 
             home-manager.sharedModules = [
@@ -79,5 +90,6 @@
           }
       ];
     };
+
   };
 }
