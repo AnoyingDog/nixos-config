@@ -5,8 +5,10 @@
     hyprpolkitagent.enable = true;
   };
   wayland.windowManager.hyprland.enable = true;
-  #wayland.windowManager.hyprland.configType = "hyprlang";
 
+  wayland.windowManager.hyprland.settings = {
+
+  };
   wayland.windowManager.hyprland.extraConfig = ''
     ------------------
     ---- MONITORS ----
@@ -17,8 +19,6 @@
     -------------------
     ---- AUTOSTART ----
     -------------------
-    -- exec-once now lives inside the hyprland.start event so it only ever
-    -- runs once at boot, even though hyprland.lua gets re-parsed on save.
     hl.on("hyprland.start", function()
 
       hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
@@ -145,7 +145,7 @@
 
     hl.bind(mainMod .. " + ALT_L", hl.dsp.exec_cmd("${lib.getExe pkgs.kitty}"))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
-    hl.bind(mainMod .. " + Z", hl.dsp.exit())
+    --hl.bind(mainMod .. " + Z", hl.dsp.exit())
     hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("${lib.getExe pkgs.thunar}"))
     hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
     hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun"))

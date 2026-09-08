@@ -3,9 +3,12 @@
 {
   programs.git = {
     enable = true;
-    userName = "AnoyingDog";
-    userEmail = "AnoyingDog@users.noreply.github.com";
-    extraConfig = {
+
+    settings = {
+     user = {
+      user.name = "AnoyingDog";
+      user.email = "AnoyingDog@users.noreply.github.com";
+     };
       credential.helper = "!gh auth git-credential";
     };
   };

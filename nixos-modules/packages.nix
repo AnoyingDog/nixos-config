@@ -2,19 +2,20 @@
 
 {
   environment.systemPackages = with pkgs; [
-      playerctl
-      brightnessctl
-      fanctl
-      ethtool
-      linuxPackages.cpupower
+    usbutils
+    playerctl
+    brightnessctl
+    fanctl
+    ethtool
+    linuxPackages.cpupower
 
-      waydroid-helper
+    waydroid-helper
 
-      jack2
-      pipewire
-      wireplumber
-      alsa-utils
-      pipewire.jack
+    jack2
+    pipewire
+    wireplumber
+    alsa-utils
+    pipewire.jack
 
   ];
 }

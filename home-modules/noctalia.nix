@@ -23,7 +23,7 @@
       backdrop = {
         blur_intensity = 0.5;
         enabled = false;
-        tint_intensity = 0.30000001192092896;
+        tint_intensity = 0.3;
       };
 
       bar = {
@@ -39,7 +39,7 @@
           capsule_group = [ ];
           capsule_opacity = 1.0;
           capsule_padding = 6.0;
-          capsule_thickness = 0.75999999046325684;
+          capsule_thickness = 0.76;
           center = [ "workspaces" ];
           concave_edge_corners = true;
           contact_shadow = false;
@@ -129,15 +129,15 @@
         active_opacity = 1.0;
         active_scale = 1.0;
         auto_hide = true;
-        background_opacity = 0.87999999523162842;
+        background_opacity = 0.88;
         border = "outline";
         border_width = 0.0;
         concave_edge_corners = true;
         cross_axis_padding = 8;
         enabled = false;
         icon_size = 48;
-        inactive_opacity = 0.85000002384185791;
-        inactive_scale = 0.85000002384185791;
+        inactive_opacity = 0.85;
+        inactive_scale = 0.85;
         item_spacing = 6;
         launcher_custom_image = "";
         launcher_custom_image_colorize = false;
@@ -145,7 +145,7 @@
         launcher_position = "none";
         layer = "top";
         magnification = true;
-        magnification_scale = 1.4500000476837158;
+        magnification_scale = 1.45;
         main_axis_padding = 16;
         margin_edge = 0;
         margin_ends = 0;
@@ -275,7 +275,7 @@
         fingerprint = true;
         lock_before_suspend = true;
         monitors = [ ];
-        tint_intensity = 0.30000001192092896;
+        tint_intensity = 0.3;
         wallpaper = "";
       };
 
@@ -347,7 +347,7 @@
       };
 
       notification = {
-        background_opacity = 0.79999995231628418;
+        background_opacity = 0.80;
         border = true;
         collapse_on_dismiss = true;
         enable_daemon = true;
@@ -364,7 +364,7 @@
       };
 
       osd = {
-        background_opacity = 0.97000002861022949;
+        background_opacity = 0.97;
         border = true;
         enabled = true;
         monitors = [ "DP-2" ];
@@ -397,7 +397,7 @@
       plugin_settings = { };
 
       plugins = {
-        auto_update = true;
+        auto_update = "all";
         enabled = [ ];
 
         source = [
@@ -476,7 +476,7 @@
         };
 
         mpris = {
-          blacklist = [ ];
+          blacklist = [ "Mozilla zen-twilight" ];
         };
 
         panel = {
@@ -662,7 +662,7 @@
         directory = toString assets.wallpaper-dir;
         directory_dark = "";
         directory_light = "";
-        edge_smoothness = 0.30000001192092896;
+        edge_smoothness = 1;
         enabled = true;
         fill_color = "";
         fill_mode = "crop";
@@ -672,8 +672,8 @@
         transition_on_startup = false;
 
         automation = {
-          enabled = false;
-          interval_seconds = 1800;
+          enabled = true;
+          interval_seconds = 900;
           order = "random";
           recursive = true;
         };
