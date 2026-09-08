@@ -8,9 +8,6 @@
     fanctl
     ethtool
     linuxPackages.cpupower
-
-    waydroid-helper
-
     jack2
     pipewire
     wireplumber

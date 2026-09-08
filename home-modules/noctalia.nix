@@ -591,7 +591,7 @@
         };
 
         shadow = {
-          alpha = 0.55000001192092896;
+          alpha = 0.55;
           direction = "down";
         };
       };

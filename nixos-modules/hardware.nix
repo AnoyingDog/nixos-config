@@ -5,6 +5,6 @@
       enable32Bit = true;
     };
     cpu.intel.updateMicrocode = true;
-    bluetooth.enable = false;
+    bluetooth.enable = true;
   };
 } 
