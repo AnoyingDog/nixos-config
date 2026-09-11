@@ -57,7 +57,7 @@
     system = "x86_64-linux";
   in
   {
-    nixosConfigurations."The-Silly-Machine" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."Leon-NixOS" = nixpkgs.lib.nixosSystem {
       inherit system;
 
       specialArgs = {
