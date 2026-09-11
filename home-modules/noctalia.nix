@@ -212,36 +212,37 @@
       };
 
       idle = {
-        behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
+        behavior_order = [ "lock_with_hyprlock" "screen-off" "lock-and-suspend" ];
         pre_action_fade_seconds = 2.0;
 
         behavior = {
-          lock = {
-            action = "lock";
-            command = "";
-            enabled = false;
+          lock_with_hyprlock = {
+            action = "command";
+            command = "hyprlock";
+            enabled = true;
             locked_timeout = 0.0;
             resume_command = "";
             timeout = 600.0;
           };
 
+          "screen-off" = {
+            action = "screen_off";
+            command = "";
+            enabled = true;
+            locked_timeout = 0.0;
+            resume_command = "";
+            timeout = 660.0;
+          };
+
           "lock-and-suspend" = {
             action = "lock_and_suspend";
             command = "";
-            enabled = false;
+            enabled = true;
             locked_timeout = 0.0;
             resume_command = "";
             timeout = 900.0;
           };
 
-          "screen-off" = {
-            action = "screen_off";
-            command = "";
-            enabled = false;
-            locked_timeout = 0.0;
-            resume_command = "";
-            timeout = 660.0;
-          };
         };
       };
 
