@@ -21,9 +21,9 @@
     feh
     cavalier
     mangohud
+    thunderbird
     mpv
     yt-dlp
-    thunderbird
     zapzap
     pinentry-curses
     xdg-desktop-portal-hyprland

@@ -1,15 +1,3 @@
-  { pkgs, lib, scripts, ... }:
-
-{
-  services = {
-    hyprpolkitagent.enable = true;
-  };
-  wayland.windowManager.hyprland.enable = true;
-
-  wayland.windowManager.hyprland.settings = {
-
-  };
-  wayland.windowManager.hyprland.extraConfig = ''
     ------------------
     ---- MONITORS ----
     ------------------
@@ -218,5 +206,3 @@
       match = { class = "vesktop" },
       no_blur = true,
     })
-  '';
-}
