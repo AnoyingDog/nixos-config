@@ -10,6 +10,7 @@
 
   };
   wayland.windowManager.hyprland.extraConfig = ''
+
     ------------------
     ---- MONITORS ----
     ------------------
@@ -29,7 +30,7 @@
 
       hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
-      hl.exec_cmd("vesktop", { workspace = "2 silent" })
+      hl.exec_cmd("bash -c 'sleep 2 && vesktop'", { workspace = "2 silent" })
       hl.exec_cmd("steam -silent")
     end)
 
@@ -143,7 +144,7 @@
     ---------------------
     local mainMod = "SUPER"
 
-    hl.bind(mainMod .. " + ALT_L", hl.dsp.exec_cmd("${lib.getExe pkgs.kitty}"))
+    hl.bind(mainMod .. " + ALT_L", hl.dsp.exec_cmd(" ${lib.getExe pkgs.kitty} "))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
     --hl.bind(mainMod .. " + Z", hl.dsp.exit())
     hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("${lib.getExe pkgs.thunar}"))
@@ -218,5 +219,6 @@
       match = { class = "vesktop" },
       no_blur = true,
     })
+
   '';
 }

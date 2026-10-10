@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     neovim
     opencode
+    vscode-fhs
 
     #fonts
     nerd-fonts.caskaydia-cove
@@ -67,6 +68,7 @@
 
     firefox
     inputs.helium.packages.${system}.default
+    libreoffice
     
     _7zip-zstd
     zstd
