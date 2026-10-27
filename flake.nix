@@ -11,7 +11,7 @@
     import-tree.url = "github:vic/import-tree";
 
     maccel = {
-      url = "github:Gnarus-G/maccel";
+      url = "github:chrisheib/maccel/fix/nixos-kernel-module-install";
     };
 
     helium = {
@@ -45,9 +45,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
     };
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
 
   };
 

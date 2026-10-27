@@ -7,7 +7,6 @@
     steam = { enable = true;
       remotePlay.openFirewall = true;
     };
-
     corectrl.enable = true;
     nix-ld.enable = true;
 

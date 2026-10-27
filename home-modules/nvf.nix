@@ -1,4 +1,4 @@
-{ inputs,...}:
+{ inputs, pkgs, ...}:
 
 {
 
@@ -37,7 +37,7 @@
 
       statusline.lualine = {
         enable = true;
-        theme = "dracula";
+        setupOpts.options.theme = "dracula";
       };
 
       autopairs.nvim-autopairs = {
@@ -55,8 +55,32 @@
 
       treesitter = {
         enable = true;
+        grammars = pkgs.vimPlugins.nvim-treesitter.allGrammars;
         context.enable = true;
         indent.enable = false;
+
+        queries = [
+          {
+            type = "injections";
+            filetypes = [ "nix" ];
+            loadtype = "extends";
+            query = ''
+              ; extends
+              ; Highlight the home-manager hyprland Lua config
+              ; (wayland.windowManager.hyprland.extraConfig) as Lua.
+              (binding
+                attrpath: (attrpath
+                  (identifier) @_hl
+                  (identifier) @_cfg)
+                expression: (indented_string_expression
+                  (string_fragment) @injection.content)
+                (#eq? @_hl "hyprland")
+                (#eq? @_cfg "extraConfig")
+                (#set! injection.language "lua")
+                (#set! injection.combined))
+            '';
+          }
+        ];
       };
 
       utility.oil-nvim = {

@@ -1,4 +1,4 @@
-{ pkgs, lib, scripts, ... }:
+  { pkgs, lib, scripts, ... }:
 
 {
   services = {
@@ -10,6 +10,7 @@
 
   };
   wayland.windowManager.hyprland.extraConfig = ''
+
     ------------------
     ---- MONITORS ----
     ------------------
@@ -136,7 +137,7 @@
     ---------------------
     local mainMod = "SUPER"
 
-    hl.bind(mainMod .. " + ALT_L", hl.dsp.exec_cmd("${lib.getExe pkgs.kitty}"))
+    hl.bind(mainMod .. " + ALT_L", hl.dsp.exec_cmd(" ${lib.getExe pkgs.kitty} "))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
     --hl.bind(mainMod .. " + Z", hl.dsp.exit())
     hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("${lib.getExe pkgs.thunar}"))
@@ -211,5 +212,6 @@
       match = { class = "vesktop" },
       no_blur = true,
     })
+
   '';
 }

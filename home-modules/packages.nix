@@ -6,6 +6,8 @@
     wlr-randr
     neovim
     opencode
+    vscode-fhs
+    teams-for-linux
 
     #fonts
     nerd-fonts.caskaydia-cove
@@ -24,7 +26,6 @@
     feh
     mpv
     yt-dlp
-    thunderbird
     zapzap
     pinentry-curses
     xdg-desktop-portal-hyprland
@@ -44,6 +45,7 @@
 
     firefox
     inputs.helium.packages.${system}.default
+    libreoffice
     
     _7zip-zstd
     zstd

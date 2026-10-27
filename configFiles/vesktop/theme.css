@@ -40,7 +40,7 @@
 
 	--reply-hue: 270; /* Change the reply color to match the accent color */
 	--reply-saturation: 100%;
-	--reply-lightness: 69%;
+	--reply-lightness: 25%;
 	--reply-opacity: 1;
 
 	--textarea-color: 0,0,0; /* Darken the textarea background */
