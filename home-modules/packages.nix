@@ -5,6 +5,7 @@
     neovim
     opencode
     vscode-fhs
+    teams-for-linux
 
     #fonts
     nerd-fonts.caskaydia-cove
@@ -20,7 +21,6 @@
     fzf
     bat
     feh
-    cavalier
     mangohud
     thunderbird
     mpv

@@ -11,7 +11,7 @@
     import-tree.url = "github:vic/import-tree";
 
     maccel = {
-      url = "github:Gnarus-G/maccel";
+      url = "github:chrisheib/maccel/fix/nixos-kernel-module-install";
     };
 
     helium = {

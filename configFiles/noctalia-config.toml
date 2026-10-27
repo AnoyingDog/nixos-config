@@ -1,0 +1,151 @@
+[audio]
+enable_overdrive = true
+
+[bar.default]
+background_opacity = 0.74999998323619366
+font_weight = 600
+
+[calendar]
+enabled = true
+
+[control_center]
+sidebar = "full"
+sidebar_section = "full"
+
+[dock]
+auto_hide = true
+
+[idle]
+behavior_order = [ "lock-and-suspend", "screen-off" ]
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-login-box@DP-2" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 1081.0
+    output = "DP-3"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.79999998211860657
+
+[shell]
+avatar_path = "/home/leon/nixos-config/assets/profile-picture.png"
+font_family = "Noto Sans CJK JP"
+screen_time_enabled = true
+
+    [shell.mpris]
+    blacklist = [ "Mozilla zen-twilight" ]
+
+    [shell.panel]
+    launcher_placement = "attached"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Catppuccin Mocha Pink"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-tonal-spot"
+
+[wallpaper]
+directory = "/home/leon/nixos-config/assets/wallpapers"
+edge_smoothness = 0.99999997764825821
+
+    [wallpaper.default]
+    path = "/home/leon/nixos-config/assets/wallpapers/wallpaper2.jpg"
+
+    [wallpaper.last]
+    path = "/home/leon/nixos-config/assets/wallpapers/wallpaper2.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/leon/nixos-config/assets/wallpapers/wallpaper2.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/leon/nixos-config/assets/wallpapers/wallpaper2.jpg"
+
+[widget.clock]
+format = "{:%d %B %H:%M}"
+
+[widget.launcher]
+custom_image_colorize = true
+enabled = false
+
+[widget.tray]
+drawer = true
+drawer_columns = 5
+drawer_item_size = 20.0
+hide_passive = false
+
+[widget.workspaces]
+active_pill_size = 1.5
+occupied_color = "surface_variant"
+scale = 1.25
