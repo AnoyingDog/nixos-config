@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+
+    wlr-randr
     neovim
     opencode
 
@@ -13,6 +15,7 @@
     noto-fonts-color-emoji
     liberation_ttf
     dejavu_fonts
+    teams-for-linux
 
     ffmpeg
     ripgrep
