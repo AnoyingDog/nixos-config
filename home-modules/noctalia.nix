@@ -42,7 +42,7 @@
           concave_edge_corners = true;
           contact_shadow = false;
           enabled = true;
-          end = [ "media" "notifications" "clipboard" "volume" "brightness" "battery" "clock" "session" ];
+          end = [ "media" "notifications" "clipboard" "volume" "brightness" "battery" "clock" ];
           font_weight = 600;
           hover_highlight = true;
           layer = "top";
@@ -62,7 +62,7 @@
           shadow = true;
           show_on_workspace_switch = true;
           smart_auto_hide = false;
-          start = [ "control-center" "launcher" "wallpaper" "tray" ];
+          start = [ "session" "control-center" "launcher" "wallpaper" "tray" ];
           thickness = 34;
           widget_spacing = 6;
 
@@ -572,7 +572,7 @@
               enabled = true;
               glyph = "";
               label = "";
-              shortcut = "4";
+              shortcut = "r";
               variant = "default";
             }
             {
