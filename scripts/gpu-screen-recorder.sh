@@ -6,4 +6,4 @@ if ! systemctl --user is-active --quiet gsr-replay; then
   exit 1
 fi
 pkill --signal SIGUSR1 -x gpu-screen-reco
-notify-send "Clip saved" "Last 60s written to ~/Videos/Clips"
+notify-send "Clip saved" "Last 7 minutes written to ~/Videos/Clips"

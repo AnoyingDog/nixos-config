@@ -146,9 +146,9 @@
     hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("${(scripts + "/ToggleMic.sh")}"))
     hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("${(scripts + "/gpu-screen-recorder.sh")}"))
 
-    hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} -m region --freeze"))
-    hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} -m window --freeze"))
-    hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("${lib.getExe pkgs.hyprshot} -m output --freeze"))
+    hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+    hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("noctalia msg screenshot-window"))
+    hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen"))
 
     hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("zen-twilight"))
     hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("thunderbird"))

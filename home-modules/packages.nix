@@ -23,6 +23,7 @@
     feh
     mangohud
     thunderbird
+    thunar
     mpv
     yt-dlp
     zapzap

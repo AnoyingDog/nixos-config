@@ -353,7 +353,7 @@
         layer = "top";
         max_visible = 0;
         monitors = [ "DP-2" ];
-        offset_x = 20;
+        offset_x = 100;
         offset_y = 8;
         position = "top_right";
         scale = 1.0;
@@ -517,7 +517,7 @@
         screenshot = {
           confirm_region = false;
           copy_to_clipboard = true;
-          directory = "";
+          directory = "~/Pictures/Screenshots";
           filename_pattern = "";
           freeze_screen = true;
           pipe_command = "";

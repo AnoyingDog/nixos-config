@@ -74,6 +74,7 @@ style = "bg:surface0 fg:text"
 
 [os.symbols]
 Windows = "󰍲"
+NixOS = "󱄅"
 Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"

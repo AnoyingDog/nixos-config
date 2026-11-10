@@ -28,6 +28,9 @@
 
     flatpak.enable = true;
 
+    # GVfs: needed by Thunar for trash:// support (and MTP/network mounts)
+    gvfs.enable = true;
+
     qemuGuest.enable = true;
 
     upower.enable = true;
