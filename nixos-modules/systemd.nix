@@ -8,6 +8,9 @@
       DefaultTimeoutStartSec = "15s";
       DefaultTimeoutStopSec = "15s";
     };
-
+    user.settings.Manager = {
+      DefaultTimeoutStartSec = "15s";
+      DefaultTimeoutStopSec = "15s";
+    };
   };
 }

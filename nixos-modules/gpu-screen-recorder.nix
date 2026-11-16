@@ -17,8 +17,9 @@
           "-o %h/Videos/Clips"
       ];
       Restart = "on-failure";
+      KillSignal = "SIGINT";
     };
   };
-  # Make sure the output directory exists.
+# Make sure the output directory exists.
   systemd.user.tmpfiles.rules = [ "d %h/Videos/Clips 0755 - - -" ];
 }
