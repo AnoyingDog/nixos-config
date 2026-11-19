@@ -17,13 +17,14 @@
     noto-fonts-color-emoji
     liberation_ttf
     dejavu_fonts
-    teams-for-linux
 
     ffmpeg
     ripgrep
     fzf
     bat
     feh
+    thunderbird
+    thunar
     mpv
     yt-dlp
     zapzap
@@ -46,7 +47,8 @@
     firefox
     inputs.helium.packages.${system}.default
     libreoffice
-    
+    teams-for-linux
+
     _7zip-zstd
     zstd
     unrar
