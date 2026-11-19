@@ -18,6 +18,8 @@
       ];
       Restart = "on-failure";
       KillSignal = "SIGINT";
+      TimeoutStopSec = "15s";
+      TimeoutStartSec = "15s";
     };
   };
 # Make sure the output directory exists.

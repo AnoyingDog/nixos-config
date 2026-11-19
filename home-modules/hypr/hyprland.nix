@@ -133,7 +133,7 @@
     })
 
     hl.device({ name = "razer-razer-deathadder-v2", sensitivity = -0.45 })
-    hl.device({ name = "roccat-roccat-kone-pro",     sensitivity = -0.85 })
+    hl.device({ name = "roccat-roccat-kone-pro",    sensitivity = -0.85 })
 
     ---------------------
     ---- KEYBINDINGS ----
